@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/GastosResidenciais.API/GastosResidenciais.API.csproj" />
+    <Project Path="src/GastosResidenciais.Application/GastosResidenciais.Application.csproj" />
+    <Project Path="src/GastosResidenciais.Domain/GastosResidenciais.Domain.csproj" />
+    <Project Path="src/GastosResidenciais.Infrastructure/GastosResidenciais.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/GastosResidenciais.Tests/GastosResidenciais.Tests.csproj" />
+  </Folder>
+</Solution>

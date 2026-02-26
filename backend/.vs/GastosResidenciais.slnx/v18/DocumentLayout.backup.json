@@ -1,0 +1,258 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\repos\\teste-tecnico-mxprd\\backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2B217E33-248E-E433-AFF5-B8831F63B1FE}|src\\GastosResidenciais.Domain\\GastosResidenciais.Domain.csproj|c:\\repos\\teste-tecnico-mxprd\\backend\\src\\gastosresidenciais.domain\\enums\\finalidade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B217E33-248E-E433-AFF5-B8831F63B1FE}|src\\GastosResidenciais.Domain\\GastosResidenciais.Domain.csproj|solutionrelative:src\\gastosresidenciais.domain\\enums\\finalidade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{893CF3D5-C37F-5107-5064-E077C98F13CE}|src\\GastosResidenciais.Application\\GastosResidenciais.Application.csproj|c:\\repos\\teste-tecnico-mxprd\\backend\\src\\gastosresidenciais.application\\dtos\\categoriadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{893CF3D5-C37F-5107-5064-E077C98F13CE}|src\\GastosResidenciais.Application\\GastosResidenciais.Application.csproj|solutionrelative:src\\gastosresidenciais.application\\dtos\\categoriadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1CAC50C4-4885-EE47-9252-D39A45C2D54B}|src\\GastosResidenciais.Infrastructure\\GastosResidenciais.Infrastructure.csproj|c:\\repos\\teste-tecnico-mxprd\\backend\\src\\gastosresidenciais.infrastructure\\repositories\\categoriarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1CAC50C4-4885-EE47-9252-D39A45C2D54B}|src\\GastosResidenciais.Infrastructure\\GastosResidenciais.Infrastructure.csproj|solutionrelative:src\\gastosresidenciais.infrastructure\\repositories\\categoriarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B217E33-248E-E433-AFF5-B8831F63B1FE}|src\\GastosResidenciais.Domain\\GastosResidenciais.Domain.csproj|c:\\repos\\teste-tecnico-mxprd\\backend\\src\\gastosresidenciais.domain\\entities\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B217E33-248E-E433-AFF5-B8831F63B1FE}|src\\GastosResidenciais.Domain\\GastosResidenciais.Domain.csproj|solutionrelative:src\\gastosresidenciais.domain\\entities\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1CAC50C4-4885-EE47-9252-D39A45C2D54B}|src\\GastosResidenciais.Infrastructure\\GastosResidenciais.Infrastructure.csproj|c:\\repos\\teste-tecnico-mxprd\\backend\\src\\gastosresidenciais.infrastructure\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1CAC50C4-4885-EE47-9252-D39A45C2D54B}|src\\GastosResidenciais.Infrastructure\\GastosResidenciais.Infrastructure.csproj|solutionrelative:src\\gastosresidenciais.infrastructure\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{893CF3D5-C37F-5107-5064-E077C98F13CE}|src\\GastosResidenciais.Application\\GastosResidenciais.Application.csproj|c:\\repos\\teste-tecnico-mxprd\\backend\\src\\gastosresidenciais.application\\dtos\\pessoadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{893CF3D5-C37F-5107-5064-E077C98F13CE}|src\\GastosResidenciais.Application\\GastosResidenciais.Application.csproj|solutionrelative:src\\gastosresidenciais.application\\dtos\\pessoadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{893CF3D5-C37F-5107-5064-E077C98F13CE}|src\\GastosResidenciais.Application\\GastosResidenciais.Application.csproj|c:\\repos\\teste-tecnico-mxprd\\backend\\src\\gastosresidenciais.application\\interfaces\\icategoriaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{893CF3D5-C37F-5107-5064-E077C98F13CE}|src\\GastosResidenciais.Application\\GastosResidenciais.Application.csproj|solutionrelative:src\\gastosresidenciais.application\\interfaces\\icategoriaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B217E33-248E-E433-AFF5-B8831F63B1FE}|src\\GastosResidenciais.Domain\\GastosResidenciais.Domain.csproj|c:\\repos\\teste-tecnico-mxprd\\backend\\src\\gastosresidenciais.domain\\entities\\transacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B217E33-248E-E433-AFF5-B8831F63B1FE}|src\\GastosResidenciais.Domain\\GastosResidenciais.Domain.csproj|solutionrelative:src\\gastosresidenciais.domain\\entities\\transacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B217E33-248E-E433-AFF5-B8831F63B1FE}|src\\GastosResidenciais.Domain\\GastosResidenciais.Domain.csproj|c:\\repos\\teste-tecnico-mxprd\\backend\\src\\gastosresidenciais.domain\\entities\\pessoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B217E33-248E-E433-AFF5-B8831F63B1FE}|src\\GastosResidenciais.Domain\\GastosResidenciais.Domain.csproj|solutionrelative:src\\gastosresidenciais.domain\\entities\\pessoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D0DD1B2-FB1C-2324-0C38-4095A9EA4FF6}|src\\GastosResidenciais.API\\GastosResidenciais.API.csproj|c:\\repos\\teste-tecnico-mxprd\\backend\\src\\gastosresidenciais.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D0DD1B2-FB1C-2324-0C38-4095A9EA4FF6}|src\\GastosResidenciais.API\\GastosResidenciais.API.csproj|solutionrelative:src\\gastosresidenciais.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D0DD1B2-FB1C-2324-0C38-4095A9EA4FF6}|src\\GastosResidenciais.API\\GastosResidenciais.API.csproj|c:\\repos\\teste-tecnico-mxprd\\backend\\src\\gastosresidenciais.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6D0DD1B2-FB1C-2324-0C38-4095A9EA4FF6}|src\\GastosResidenciais.API\\GastosResidenciais.API.csproj|solutionrelative:src\\gastosresidenciais.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D0DD1B2-FB1C-2324-0C38-4095A9EA4FF6}|src\\GastosResidenciais.API\\GastosResidenciais.API.csproj|c:\\repos\\teste-tecnico-mxprd\\backend\\src\\gastosresidenciais.api\\controllers\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D0DD1B2-FB1C-2324-0C38-4095A9EA4FF6}|src\\GastosResidenciais.API\\GastosResidenciais.API.csproj|solutionrelative:src\\gastosresidenciais.api\\controllers\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D0DD1B2-FB1C-2324-0C38-4095A9EA4FF6}|src\\GastosResidenciais.API\\GastosResidenciais.API.csproj|c:\\repos\\teste-tecnico-mxprd\\backend\\src\\gastosresidenciais.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6D0DD1B2-FB1C-2324-0C38-4095A9EA4FF6}|src\\GastosResidenciais.API\\GastosResidenciais.API.csproj|solutionrelative:src\\gastosresidenciais.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{893CF3D5-C37F-5107-5064-E077C98F13CE}|src\\GastosResidenciais.Application\\GastosResidenciais.Application.csproj|c:\\repos\\teste-tecnico-mxprd\\backend\\src\\gastosresidenciais.application\\dtos\\transacaodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{893CF3D5-C37F-5107-5064-E077C98F13CE}|src\\GastosResidenciais.Application\\GastosResidenciais.Application.csproj|solutionrelative:src\\gastosresidenciais.application\\dtos\\transacaodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ICategoriaService.cs",
+              "DocumentMoniker": "C:\\repos\\teste-tecnico-mxprd\\backend\\src\\GastosResidenciais.Application\\Interfaces\\ICategoriaService.cs",
+              "RelativeDocumentMoniker": "src\\GastosResidenciais.Application\\Interfaces\\ICategoriaService.cs",
+              "ToolTip": "C:\\repos\\teste-tecnico-mxprd\\backend\\src\\GastosResidenciais.Application\\Interfaces\\ICategoriaService.cs",
+              "RelativeToolTip": "src\\GastosResidenciais.Application\\Interfaces\\ICategoriaService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T21:38:30.294Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\repos\\teste-tecnico-mxprd\\backend\\src\\GastosResidenciais.Infrastructure\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "src\\GastosResidenciais.Infrastructure\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\repos\\teste-tecnico-mxprd\\backend\\src\\GastosResidenciais.Infrastructure\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "src\\GastosResidenciais.Infrastructure\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAA1wBYAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T21:34:24.096Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\repos\\teste-tecnico-mxprd\\backend\\src\\GastosResidenciais.API\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "src\\GastosResidenciais.API\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\repos\\teste-tecnico-mxprd\\backend\\src\\GastosResidenciais.API\\Properties\\launchSettings.json",
+              "RelativeToolTip": "src\\GastosResidenciais.API\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-26T21:23:29.039Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\repos\\teste-tecnico-mxprd\\backend\\src\\GastosResidenciais.API\\Program.cs",
+              "RelativeDocumentMoniker": "src\\GastosResidenciais.API\\Program.cs",
+              "ToolTip": "C:\\repos\\teste-tecnico-mxprd\\backend\\src\\GastosResidenciais.API\\Program.cs",
+              "RelativeToolTip": "src\\GastosResidenciais.API\\Program.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAAC0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T21:07:31.794Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "TransacaoDto.cs",
+              "DocumentMoniker": "C:\\repos\\teste-tecnico-mxprd\\backend\\src\\GastosResidenciais.Application\\DTOs\\TransacaoDto.cs",
+              "RelativeDocumentMoniker": "src\\GastosResidenciais.Application\\DTOs\\TransacaoDto.cs",
+              "ToolTip": "C:\\repos\\teste-tecnico-mxprd\\backend\\src\\GastosResidenciais.Application\\DTOs\\TransacaoDto.cs",
+              "RelativeToolTip": "src\\GastosResidenciais.Application\\DTOs\\TransacaoDto.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T21:07:21.056Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PessoaDto.cs",
+              "DocumentMoniker": "C:\\repos\\teste-tecnico-mxprd\\backend\\src\\GastosResidenciais.Application\\DTOs\\PessoaDto.cs",
+              "RelativeDocumentMoniker": "src\\GastosResidenciais.Application\\DTOs\\PessoaDto.cs",
+              "ToolTip": "C:\\repos\\teste-tecnico-mxprd\\backend\\src\\GastosResidenciais.Application\\DTOs\\PessoaDto.cs",
+              "RelativeToolTip": "src\\GastosResidenciais.Application\\DTOs\\PessoaDto.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T21:07:12.889Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CategoriaDto.cs",
+              "DocumentMoniker": "C:\\repos\\teste-tecnico-mxprd\\backend\\src\\GastosResidenciais.Application\\DTOs\\CategoriaDto.cs",
+              "RelativeDocumentMoniker": "src\\GastosResidenciais.Application\\DTOs\\CategoriaDto.cs",
+              "ToolTip": "C:\\repos\\teste-tecnico-mxprd\\backend\\src\\GastosResidenciais.Application\\DTOs\\CategoriaDto.cs",
+              "RelativeToolTip": "src\\GastosResidenciais.Application\\DTOs\\CategoriaDto.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAzwCwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T21:07:04.644Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Finalidade.cs",
+              "DocumentMoniker": "C:\\repos\\teste-tecnico-mxprd\\backend\\src\\GastosResidenciais.Domain\\Enums\\Finalidade.cs",
+              "RelativeDocumentMoniker": "src\\GastosResidenciais.Domain\\Enums\\Finalidade.cs",
+              "ToolTip": "C:\\repos\\teste-tecnico-mxprd\\backend\\src\\GastosResidenciais.Domain\\Enums\\Finalidade.cs",
+              "RelativeToolTip": "src\\GastosResidenciais.Domain\\Enums\\Finalidade.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T21:29:57.056Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Categoria.cs",
+              "DocumentMoniker": "C:\\repos\\teste-tecnico-mxprd\\backend\\src\\GastosResidenciais.Domain\\Entities\\Categoria.cs",
+              "RelativeDocumentMoniker": "src\\GastosResidenciais.Domain\\Entities\\Categoria.cs",
+              "ToolTip": "C:\\repos\\teste-tecnico-mxprd\\backend\\src\\GastosResidenciais.Domain\\Entities\\Categoria.cs",
+              "RelativeToolTip": "src\\GastosResidenciais.Domain\\Entities\\Categoria.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T21:06:53.582Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CategoriaRepository.cs",
+              "DocumentMoniker": "C:\\repos\\teste-tecnico-mxprd\\backend\\src\\GastosResidenciais.Infrastructure\\Repositories\\CategoriaRepository.cs",
+              "RelativeDocumentMoniker": "src\\GastosResidenciais.Infrastructure\\Repositories\\CategoriaRepository.cs",
+              "ToolTip": "C:\\repos\\teste-tecnico-mxprd\\backend\\src\\GastosResidenciais.Infrastructure\\Repositories\\CategoriaRepository.cs",
+              "RelativeToolTip": "src\\GastosResidenciais.Infrastructure\\Repositories\\CategoriaRepository.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAwwB0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T21:05:58.823Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CategoriasController.cs",
+              "DocumentMoniker": "C:\\repos\\teste-tecnico-mxprd\\backend\\src\\GastosResidenciais.API\\Controllers\\CategoriasController.cs",
+              "RelativeDocumentMoniker": "src\\GastosResidenciais.API\\Controllers\\CategoriasController.cs",
+              "ToolTip": "C:\\repos\\teste-tecnico-mxprd\\backend\\src\\GastosResidenciais.API\\Controllers\\CategoriasController.cs",
+              "RelativeToolTip": "src\\GastosResidenciais.API\\Controllers\\CategoriasController.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAwwDQAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T21:23:37.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Transacao.cs",
+              "DocumentMoniker": "C:\\repos\\teste-tecnico-mxprd\\backend\\src\\GastosResidenciais.Domain\\Entities\\Transacao.cs",
+              "RelativeDocumentMoniker": "src\\GastosResidenciais.Domain\\Entities\\Transacao.cs",
+              "ToolTip": "C:\\repos\\teste-tecnico-mxprd\\backend\\src\\GastosResidenciais.Domain\\Entities\\Transacao.cs",
+              "RelativeToolTip": "src\\GastosResidenciais.Domain\\Entities\\Transacao.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T21:31:42.976Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\repos\\teste-tecnico-mxprd\\backend\\src\\GastosResidenciais.API\\appsettings.json",
+              "RelativeDocumentMoniker": "src\\GastosResidenciais.API\\appsettings.json",
+              "ToolTip": "C:\\repos\\teste-tecnico-mxprd\\backend\\src\\GastosResidenciais.API\\appsettings.json",
+              "RelativeToolTip": "src\\GastosResidenciais.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-26T21:32:56.323Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Pessoa.cs",
+              "DocumentMoniker": "C:\\repos\\teste-tecnico-mxprd\\backend\\src\\GastosResidenciais.Domain\\Entities\\Pessoa.cs",
+              "RelativeDocumentMoniker": "src\\GastosResidenciais.Domain\\Entities\\Pessoa.cs",
+              "ToolTip": "C:\\repos\\teste-tecnico-mxprd\\backend\\src\\GastosResidenciais.Domain\\Entities\\Pessoa.cs",
+              "RelativeToolTip": "src\\GastosResidenciais.Domain\\Entities\\Pessoa.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T21:34:12.542Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
