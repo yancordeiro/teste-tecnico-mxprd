@@ -1,4 +1,4 @@
-using GastosResidenciais.Application.DTOs;
+using GastosResidenciais.Application.Requests;
 using GastosResidenciais.Application.Services;
 using GastosResidenciais.Domain.Entities;
 using GastosResidenciais.Domain.Enums;
@@ -30,7 +30,7 @@ namespace GastosResidenciais.Tests
             var categoriaId = Guid.NewGuid();
             var pessoa = new Pessoa { Id = pessoaId, Nome = "Menor", Idade = 15 };
             var categoria = new Categoria { Id = categoriaId, Descricao = "Geral", Finalidade = Finalidade.Ambas };
-            var dto = new TransacaoInputDto
+            var request = new CreateTransacaoRequest
             {
                 Descricao = "Receita teste",
                 Valor = 100,
@@ -43,7 +43,7 @@ namespace GastosResidenciais.Tests
             _categoriaRepoMock.Setup(r => r.ObterPorIdAsync(categoriaId)).ReturnsAsync(categoria);
 
             // Act & Assert
-            var exception = await Assert.ThrowsAsync<ArgumentException>(() => _service.CriarAsync(dto));
+            var exception = await Assert.ThrowsAsync<ArgumentException>(() => _service.CriarAsync(request));
             Assert.Equal("Menores de idade so podem registrar despesas", exception.Message);
         }
 
@@ -55,7 +55,7 @@ namespace GastosResidenciais.Tests
             var categoriaId = Guid.NewGuid();
             var pessoa = new Pessoa { Id = pessoaId, Nome = "Menor", Idade = 15 };
             var categoria = new Categoria { Id = categoriaId, Descricao = "Alimentacao", Finalidade = Finalidade.Despesa };
-            var dto = new TransacaoInputDto
+            var request = new CreateTransacaoRequest
             {
                 Descricao = "Despesa teste",
                 Valor = 50,
@@ -70,11 +70,11 @@ namespace GastosResidenciais.Tests
                 .ReturnsAsync((Transacao t) => t);
 
             // Act
-            var resultado = await _service.CriarAsync(dto);
+            var resultado = await _service.CriarAsync(request);
 
             // Assert
             Assert.NotNull(resultado);
-            Assert.Equal(dto.Descricao, resultado.Descricao);
+            Assert.Equal(request.Descricao, resultado.Descricao);
         }
 
         [Fact]
@@ -85,7 +85,7 @@ namespace GastosResidenciais.Tests
             var categoriaId = Guid.NewGuid();
             var pessoa = new Pessoa { Id = pessoaId, Nome = "Adulto", Idade = 30 };
             var categoria = new Categoria { Id = categoriaId, Descricao = "Salario", Finalidade = Finalidade.Receita };
-            var dto = new TransacaoInputDto
+            var request = new CreateTransacaoRequest
             {
                 Descricao = "Despesa invalida",
                 Valor = 100,
@@ -98,7 +98,7 @@ namespace GastosResidenciais.Tests
             _categoriaRepoMock.Setup(r => r.ObterPorIdAsync(categoriaId)).ReturnsAsync(categoria);
 
             // Act & Assert
-            var exception = await Assert.ThrowsAsync<ArgumentException>(() => _service.CriarAsync(dto));
+            var exception = await Assert.ThrowsAsync<ArgumentException>(() => _service.CriarAsync(request));
             Assert.Contains("nao aceita transacoes do tipo", exception.Message);
         }
 
@@ -108,7 +108,7 @@ namespace GastosResidenciais.Tests
             // Arrange
             var pessoaId = Guid.NewGuid();
             var categoriaId = Guid.NewGuid();
-            var dto = new TransacaoInputDto
+            var request = new CreateTransacaoRequest
             {
                 Descricao = "Transacao",
                 Valor = 100,
@@ -120,7 +120,7 @@ namespace GastosResidenciais.Tests
             _pessoaRepoMock.Setup(r => r.ObterPorIdAsync(pessoaId)).ReturnsAsync((Pessoa?)null);
 
             // Act & Assert
-            var exception = await Assert.ThrowsAsync<ArgumentException>(() => _service.CriarAsync(dto));
+            var exception = await Assert.ThrowsAsync<ArgumentException>(() => _service.CriarAsync(request));
             Assert.Equal("Pessoa nao encontrada", exception.Message);
         }
 
@@ -131,7 +131,7 @@ namespace GastosResidenciais.Tests
             var pessoaId = Guid.NewGuid();
             var categoriaId = Guid.NewGuid();
             var pessoa = new Pessoa { Id = pessoaId, Nome = "Teste", Idade = 25 };
-            var dto = new TransacaoInputDto
+            var request = new CreateTransacaoRequest
             {
                 Descricao = "Transacao",
                 Valor = 100,
@@ -144,7 +144,7 @@ namespace GastosResidenciais.Tests
             _categoriaRepoMock.Setup(r => r.ObterPorIdAsync(categoriaId)).ReturnsAsync((Categoria?)null);
 
             // Act & Assert
-            var exception = await Assert.ThrowsAsync<ArgumentException>(() => _service.CriarAsync(dto));
+            var exception = await Assert.ThrowsAsync<ArgumentException>(() => _service.CriarAsync(request));
             Assert.Equal("Categoria nao encontrada", exception.Message);
         }
     }

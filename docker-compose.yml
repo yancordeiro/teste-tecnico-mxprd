@@ -1,0 +1,23 @@
+services:
+  backend:
+    build: ./backend
+    container_name: gastos-backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/app
+      - /app/src/GastosResidenciais.API/bin
+      - /app/src/GastosResidenciais.API/obj
+
+  frontend:
+    build: ./frontend
+    container_name: gastos-frontend
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_URL=http://backend:5000
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend

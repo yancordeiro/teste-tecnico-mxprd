@@ -1,14 +1,15 @@
-using GastosResidenciais.Application.DTOs;
+using GastosResidenciais.Application.Requests;
+using GastosResidenciais.Application.Responses;
 
 namespace GastosResidenciais.Application.Interfaces
 {
     public interface IPessoaService
     {
-        Task<IEnumerable<PessoaOutputDto>> ObterTodosAsync();
-        Task<PessoaOutputDto?> ObterPorIdAsync(Guid id);
-        Task<PessoaOutputDto> CriarAsync(PessoaInputDto dto);
-        Task<PessoaOutputDto?> AtualizarAsync(Guid id, PessoaInputDto dto);
+        Task<IEnumerable<PessoaResponse>> ObterTodosAsync();
+        Task<PessoaResponse?> ObterPorIdAsync(Guid id);
+        Task<PessoaResponse> CriarAsync(CreatePessoaRequest request);
+        Task<PessoaResponse?> AtualizarAsync(Guid id, UpdatePessoaRequest request);
         Task<bool> RemoverAsync(Guid id);
-        Task<TotaisGeraisDto> ObterTotaisPorPessoaAsync();
+        Task<TotaisGeraisResponse> ObterTotaisPorPessoaAsync();
     }
 }

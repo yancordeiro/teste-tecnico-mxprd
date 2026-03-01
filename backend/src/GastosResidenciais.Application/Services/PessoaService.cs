@@ -1,4 +1,5 @@
-using GastosResidenciais.Application.DTOs;
+using GastosResidenciais.Application.Requests;
+using GastosResidenciais.Application.Responses;
 using GastosResidenciais.Application.Interfaces;
 using GastosResidenciais.Domain.Entities;
 using GastosResidenciais.Domain.Enums;
@@ -17,41 +18,41 @@ namespace GastosResidenciais.Application.Services
             _transacaoRepository = transacaoRepository;
         }
 
-        public async Task<IEnumerable<PessoaOutputDto>> ObterTodosAsync()
+        public async Task<IEnumerable<PessoaResponse>> ObterTodosAsync()
         {
             var pessoas = await _pessoaRepository.ObterTodosAsync();
-            return pessoas.Select(MapToOutputDto);
+            return pessoas.Select(MapToResponse);
         }
 
-        public async Task<PessoaOutputDto?> ObterPorIdAsync(Guid id)
+        public async Task<PessoaResponse?> ObterPorIdAsync(Guid id)
         {
             var pessoa = await _pessoaRepository.ObterPorIdAsync(id);
-            return pessoa == null ? null : MapToOutputDto(pessoa);
+            return pessoa == null ? null : MapToResponse(pessoa);
         }
 
-        public async Task<PessoaOutputDto> CriarAsync(PessoaInputDto dto)
+        public async Task<PessoaResponse> CriarAsync(CreatePessoaRequest request)
         {
             var pessoa = new Pessoa
             {
-                Nome = dto.Nome,
-                Idade = dto.Idade
+                Nome = request.Nome,
+                Idade = request.Idade
             };
 
             var pessoaCriada = await _pessoaRepository.AdicionarAsync(pessoa);
-            return MapToOutputDto(pessoaCriada);
+            return MapToResponse(pessoaCriada);
         }
 
-        public async Task<PessoaOutputDto?> AtualizarAsync(Guid id, PessoaInputDto dto)
+        public async Task<PessoaResponse?> AtualizarAsync(Guid id, UpdatePessoaRequest request)
         {
             var pessoa = await _pessoaRepository.ObterPorIdAsync(id);
             if (pessoa == null)
                 return null;
 
-            pessoa.Nome = dto.Nome;
-            pessoa.Idade = dto.Idade;
+            pessoa.Nome = request.Nome;
+            pessoa.Idade = request.Idade;
 
             await _pessoaRepository.AtualizarAsync(pessoa);
-            return MapToOutputDto(pessoa);
+            return MapToResponse(pessoa);
         }
 
         public async Task<bool> RemoverAsync(Guid id)
@@ -67,7 +68,7 @@ namespace GastosResidenciais.Application.Services
         }
 
         // Retorna os totais de receitas, despesas e saldo por pessoa
-        public async Task<TotaisGeraisDto> ObterTotaisPorPessoaAsync()
+        public async Task<TotaisGeraisResponse> ObterTotaisPorPessoaAsync()
         {
             var pessoas = await _pessoaRepository.ObterTodosAsync();
             var transacoes = await _transacaoRepository.ObterTodosAsync();
@@ -78,7 +79,7 @@ namespace GastosResidenciais.Application.Services
                 var totalReceitas = transacoesPessoa.Where(t => t.Tipo == Finalidade.Receita).Sum(t => t.Valor);
                 var totalDespesas = transacoesPessoa.Where(t => t.Tipo == Finalidade.Despesa).Sum(t => t.Valor);
 
-                return new PessoaTotaisDto
+                return new PessoaTotaisResponse
                 {
                     Id = p.Id,
                     Nome = p.Nome,
@@ -88,7 +89,7 @@ namespace GastosResidenciais.Application.Services
                 };
             }).ToList();
 
-            return new TotaisGeraisDto
+            return new TotaisGeraisResponse
             {
                 Pessoas = pessoasTotais,
                 TotalGeralReceitas = pessoasTotais.Sum(p => p.TotalReceitas),
@@ -97,9 +98,9 @@ namespace GastosResidenciais.Application.Services
             };
         }
 
-        private static PessoaOutputDto MapToOutputDto(Pessoa pessoa)
+        private static PessoaResponse MapToResponse(Pessoa pessoa)
         {
-            return new PessoaOutputDto
+            return new PessoaResponse
             {
                 Id = pessoa.Id,
                 Nome = pessoa.Nome,

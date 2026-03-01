@@ -1,4 +1,5 @@
-using GastosResidenciais.Application.DTOs;
+using GastosResidenciais.Application.Requests;
+using GastosResidenciais.Application.Responses;
 using GastosResidenciais.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,7 +18,7 @@ namespace GastosResidenciais.API.Controllers
 
         // GET: api/transacoes
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<TransacaoOutputDto>>> ObterTodos()
+        public async Task<ActionResult<IEnumerable<TransacaoResponse>>> ObterTodos()
         {
             var transacoes = await _transacaoService.ObterTodosAsync();
             return Ok(transacoes);
@@ -25,7 +26,7 @@ namespace GastosResidenciais.API.Controllers
 
         // GET: api/transacoes/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<TransacaoOutputDto>> ObterPorId(Guid id)
+        public async Task<ActionResult<TransacaoResponse>> ObterPorId(Guid id)
         {
             var transacao = await _transacaoService.ObterPorIdAsync(id);
             if (transacao == null)
@@ -39,14 +40,14 @@ namespace GastosResidenciais.API.Controllers
         // - Menor de idade so pode ter despesas
         // - Categoria deve aceitar o tipo da transacao
         [HttpPost]
-        public async Task<ActionResult<TransacaoOutputDto>> Criar([FromBody] TransacaoInputDto dto)
+        public async Task<ActionResult<TransacaoResponse>> Criar([FromBody] CreateTransacaoRequest request)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
             try
             {
-                var transacao = await _transacaoService.CriarAsync(dto);
+                var transacao = await _transacaoService.CriarAsync(request);
                 return CreatedAtAction(nameof(ObterPorId), new { id = transacao.Id }, transacao);
             }
             catch (ArgumentException ex)

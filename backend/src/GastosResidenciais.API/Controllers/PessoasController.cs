@@ -1,4 +1,5 @@
-using GastosResidenciais.Application.DTOs;
+using GastosResidenciais.Application.Requests;
+using GastosResidenciais.Application.Responses;
 using GastosResidenciais.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,7 +18,7 @@ namespace GastosResidenciais.API.Controllers
 
         // GET: api/pessoas
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<PessoaOutputDto>>> ObterTodos()
+        public async Task<ActionResult<IEnumerable<PessoaResponse>>> ObterTodos()
         {
             var pessoas = await _pessoaService.ObterTodosAsync();
             return Ok(pessoas);
@@ -25,7 +26,7 @@ namespace GastosResidenciais.API.Controllers
 
         // GET: api/pessoas/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<PessoaOutputDto>> ObterPorId(Guid id)
+        public async Task<ActionResult<PessoaResponse>> ObterPorId(Guid id)
         {
             var pessoa = await _pessoaService.ObterPorIdAsync(id);
             if (pessoa == null)
@@ -36,23 +37,23 @@ namespace GastosResidenciais.API.Controllers
 
         // POST: api/pessoas
         [HttpPost]
-        public async Task<ActionResult<PessoaOutputDto>> Criar([FromBody] PessoaInputDto dto)
+        public async Task<ActionResult<PessoaResponse>> Criar([FromBody] CreatePessoaRequest request)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var pessoa = await _pessoaService.CriarAsync(dto);
+            var pessoa = await _pessoaService.CriarAsync(request);
             return CreatedAtAction(nameof(ObterPorId), new { id = pessoa.Id }, pessoa);
         }
 
         // PUT: api/pessoas/5
         [HttpPut("{id}")]
-        public async Task<ActionResult<PessoaOutputDto>> Atualizar(Guid id, [FromBody] PessoaInputDto dto)
+        public async Task<ActionResult<PessoaResponse>> Atualizar(Guid id, [FromBody] UpdatePessoaRequest request)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var pessoa = await _pessoaService.AtualizarAsync(id, dto);
+            var pessoa = await _pessoaService.AtualizarAsync(id, request);
             if (pessoa == null)
                 return NotFound();
 
@@ -73,7 +74,7 @@ namespace GastosResidenciais.API.Controllers
         // GET: api/pessoas/totais
         // Retorna o total de receitas, despesas e saldo por pessoa
         [HttpGet("totais")]
-        public async Task<ActionResult<TotaisGeraisDto>> ObterTotais()
+        public async Task<ActionResult<TotaisGeraisResponse>> ObterTotais()
         {
             var totais = await _pessoaService.ObterTotaisPorPessoaAsync();
             return Ok(totais);

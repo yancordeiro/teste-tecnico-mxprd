@@ -1,10 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 using GastosResidenciais.Domain.Enums;
 
-namespace GastosResidenciais.Application.DTOs
+namespace GastosResidenciais.Application.Requests
 {
-    // DTO para criacao de transacao
-    public class TransacaoInputDto
+    public class CreateTransacaoRequest
     {
         [Required(ErrorMessage = "Descricao eh obrigatoria")]
         [MaxLength(400, ErrorMessage = "Descricao deve ter no maximo 400 caracteres")]
@@ -22,19 +21,5 @@ namespace GastosResidenciais.Application.DTOs
 
         [Required(ErrorMessage = "PessoaId eh obrigatorio")]
         public Guid PessoaId { get; set; }
-    }
-
-    // DTO para retorno de transacao
-    public class TransacaoOutputDto
-    {
-        public Guid Id { get; set; }
-        public string Descricao { get; set; } = string.Empty;
-        public decimal Valor { get; set; }
-        public Finalidade Tipo { get; set; }
-        public string TipoDescricao { get; set; } = string.Empty;
-        public Guid CategoriaId { get; set; }
-        public string CategoriaDescricao { get; set; } = string.Empty;
-        public Guid PessoaId { get; set; }
-        public string PessoaNome { get; set; } = string.Empty;
     }
 }

@@ -23,7 +23,7 @@ namespace GastosResidenciais.Application.DTOs
         public string FinalidadeDescricao { get; set; } = string.Empty;
     }
 
-    // DTO para totais por categoria (opcional)
+    // DTO para totais por categoria
     public class CategoriaTotaisDto
     {
         public Guid Id { get; set; }

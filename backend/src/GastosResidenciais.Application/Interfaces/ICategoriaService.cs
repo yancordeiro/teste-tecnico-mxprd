@@ -1,12 +1,13 @@
-using GastosResidenciais.Application.DTOs;
+using GastosResidenciais.Application.Requests;
+using GastosResidenciais.Application.Responses;
 
 namespace GastosResidenciais.Application.Interfaces
 {
     public interface ICategoriaService
     {
-        Task<IEnumerable<CategoriaOutputDto>> ObterTodosAsync();
-        Task<CategoriaOutputDto?> ObterPorIdAsync(Guid id);
-        Task<CategoriaOutputDto> CriarAsync(CategoriaInputDto dto);
-        Task<TotaisCategoriasDto> ObterTotaisPorCategoriaAsync();
+        Task<IEnumerable<CategoriaResponse>> ObterTodosAsync();
+        Task<CategoriaResponse?> ObterPorIdAsync(Guid id);
+        Task<CategoriaResponse> CriarAsync(CreateCategoriaRequest request);
+        Task<TotaisCategoriasResponse> ObterTotaisPorCategoriaAsync();
     }
 }

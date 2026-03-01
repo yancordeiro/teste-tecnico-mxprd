@@ -1,4 +1,5 @@
-using GastosResidenciais.Application.DTOs;
+using GastosResidenciais.Application.Requests;
+using GastosResidenciais.Application.Responses;
 using GastosResidenciais.Application.Interfaces;
 using GastosResidenciais.Domain.Entities;
 using GastosResidenciais.Domain.Enums;
@@ -22,46 +23,46 @@ namespace GastosResidenciais.Application.Services
             _categoriaRepository = categoriaRepository;
         }
 
-        public async Task<IEnumerable<TransacaoOutputDto>> ObterTodosAsync()
+        public async Task<IEnumerable<TransacaoResponse>> ObterTodosAsync()
         {
             var transacoes = await _transacaoRepository.ObterTodosAsync();
-            return transacoes.Select(MapToOutputDto);
+            return transacoes.Select(MapToResponse);
         }
 
-        public async Task<TransacaoOutputDto?> ObterPorIdAsync(Guid id)
+        public async Task<TransacaoResponse?> ObterPorIdAsync(Guid id)
         {
             var transacao = await _transacaoRepository.ObterPorIdAsync(id);
-            return transacao == null ? null : MapToOutputDto(transacao);
+            return transacao == null ? null : MapToResponse(transacao);
         }
 
-        public async Task<TransacaoOutputDto> CriarAsync(TransacaoInputDto dto)
+        public async Task<TransacaoResponse> CriarAsync(CreateTransacaoRequest request)
         {
             // Valida se a pessoa existe
-            var pessoa = await _pessoaRepository.ObterPorIdAsync(dto.PessoaId);
+            var pessoa = await _pessoaRepository.ObterPorIdAsync(request.PessoaId);
             if (pessoa == null)
                 throw new ArgumentException("Pessoa nao encontrada");
 
             // Valida se a categoria existe
-            var categoria = await _categoriaRepository.ObterPorIdAsync(dto.CategoriaId);
+            var categoria = await _categoriaRepository.ObterPorIdAsync(request.CategoriaId);
             if (categoria == null)
                 throw new ArgumentException("Categoria nao encontrada");
 
             // Regra: menor de idade so pode ter despesas
-            if (pessoa.EhMenorDeIdade() && dto.Tipo == Finalidade.Receita)
+            if (pessoa.EhMenorDeIdade() && request.Tipo == Finalidade.Receita)
                 throw new ArgumentException("Menores de idade so podem registrar despesas");
 
             // Regra: categoria deve aceitar o tipo de transacao
             // Ex: se tipo eh despesa, categoria nao pode ser somente receita
-            if (!categoria.AceitaTipoTransacao(dto.Tipo))
-                throw new ArgumentException($"Categoria '{categoria.Descricao}' nao aceita transacoes do tipo {dto.Tipo}");
+            if (!categoria.AceitaTipoTransacao(request.Tipo))
+                throw new ArgumentException($"Categoria '{categoria.Descricao}' nao aceita transacoes do tipo {request.Tipo}");
 
             var transacao = new Transacao
             {
-                Descricao = dto.Descricao,
-                Valor = dto.Valor,
-                Tipo = dto.Tipo,
-                CategoriaId = dto.CategoriaId,
-                PessoaId = dto.PessoaId,
+                Descricao = request.Descricao,
+                Valor = request.Valor,
+                Tipo = request.Tipo,
+                CategoriaId = request.CategoriaId,
+                PessoaId = request.PessoaId,
                 Categoria = categoria,
                 Pessoa = pessoa
             };
@@ -72,12 +73,12 @@ namespace GastosResidenciais.Application.Services
             transacaoCriada.Categoria = categoria;
             transacaoCriada.Pessoa = pessoa;
 
-            return MapToOutputDto(transacaoCriada);
+            return MapToResponse(transacaoCriada);
         }
 
-        private static TransacaoOutputDto MapToOutputDto(Transacao transacao)
+        private static TransacaoResponse MapToResponse(Transacao transacao)
         {
-            return new TransacaoOutputDto
+            return new TransacaoResponse
             {
                 Id = transacao.Id,
                 Descricao = transacao.Descricao,

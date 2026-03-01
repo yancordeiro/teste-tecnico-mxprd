@@ -1,0 +1,13 @@
+**/bin/
+**/obj/
+**/.vs/
+**/.vscode/
+**/node_modules/
+**/*.user
+**/*.db
+**/*.db-shm
+**/*.db-wal
+**/tests/
+*.md
+.git
+.gitignore

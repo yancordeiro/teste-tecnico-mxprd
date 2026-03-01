@@ -1,4 +1,5 @@
-using GastosResidenciais.Application.DTOs;
+using GastosResidenciais.Application.Requests;
+using GastosResidenciais.Application.Responses;
 using GastosResidenciais.Application.Interfaces;
 using GastosResidenciais.Domain.Entities;
 using GastosResidenciais.Domain.Enums;
@@ -17,32 +18,32 @@ namespace GastosResidenciais.Application.Services
             _transacaoRepository = transacaoRepository;
         }
 
-        public async Task<IEnumerable<CategoriaOutputDto>> ObterTodosAsync()
+        public async Task<IEnumerable<CategoriaResponse>> ObterTodosAsync()
         {
             var categorias = await _categoriaRepository.ObterTodosAsync();
-            return categorias.Select(MapToOutputDto);
+            return categorias.Select(MapToResponse);
         }
 
-        public async Task<CategoriaOutputDto?> ObterPorIdAsync(Guid id)
+        public async Task<CategoriaResponse?> ObterPorIdAsync(Guid id)
         {
             var categoria = await _categoriaRepository.ObterPorIdAsync(id);
-            return categoria == null ? null : MapToOutputDto(categoria);
+            return categoria == null ? null : MapToResponse(categoria);
         }
 
-        public async Task<CategoriaOutputDto> CriarAsync(CategoriaInputDto dto)
+        public async Task<CategoriaResponse> CriarAsync(CreateCategoriaRequest request)
         {
             var categoria = new Categoria
             {
-                Descricao = dto.Descricao,
-                Finalidade = dto.Finalidade
+                Descricao = request.Descricao,
+                Finalidade = request.Finalidade
             };
 
             var categoriaCriada = await _categoriaRepository.AdicionarAsync(categoria);
-            return MapToOutputDto(categoriaCriada);
+            return MapToResponse(categoriaCriada);
         }
 
         // Retorna os totais de receitas, despesas e saldo por categoria (funcionalidade opcional)
-        public async Task<TotaisCategoriasDto> ObterTotaisPorCategoriaAsync()
+        public async Task<TotaisCategoriasResponse> ObterTotaisPorCategoriaAsync()
         {
             var categorias = await _categoriaRepository.ObterTodosAsync();
             var transacoes = await _transacaoRepository.ObterTodosAsync();
@@ -53,7 +54,7 @@ namespace GastosResidenciais.Application.Services
                 var totalReceitas = transacoesCategoria.Where(t => t.Tipo == Finalidade.Receita).Sum(t => t.Valor);
                 var totalDespesas = transacoesCategoria.Where(t => t.Tipo == Finalidade.Despesa).Sum(t => t.Valor);
 
-                return new CategoriaTotaisDto
+                return new CategoriaTotaisResponse
                 {
                     Id = c.Id,
                     Descricao = c.Descricao,
@@ -63,7 +64,7 @@ namespace GastosResidenciais.Application.Services
                 };
             }).ToList();
 
-            return new TotaisCategoriasDto
+            return new TotaisCategoriasResponse
             {
                 Categorias = categoriasTotais,
                 TotalGeralReceitas = categoriasTotais.Sum(c => c.TotalReceitas),
@@ -72,9 +73,9 @@ namespace GastosResidenciais.Application.Services
             };
         }
 
-        private static CategoriaOutputDto MapToOutputDto(Categoria categoria)
+        private static CategoriaResponse MapToResponse(Categoria categoria)
         {
-            return new CategoriaOutputDto
+            return new CategoriaResponse
             {
                 Id = categoria.Id,
                 Descricao = categoria.Descricao,

@@ -1,4 +1,5 @@
-using GastosResidenciais.Application.DTOs;
+using GastosResidenciais.Application.Requests;
+using GastosResidenciais.Application.Responses;
 using GastosResidenciais.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,7 +18,7 @@ namespace GastosResidenciais.API.Controllers
 
         // GET: api/categorias
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CategoriaOutputDto>>> ObterTodos()
+        public async Task<ActionResult<IEnumerable<CategoriaResponse>>> ObterTodos()
         {
             var categorias = await _categoriaService.ObterTodosAsync();
             return Ok(categorias);
@@ -25,7 +26,7 @@ namespace GastosResidenciais.API.Controllers
 
         // GET: api/categorias/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<CategoriaOutputDto>> ObterPorId(Guid id)
+        public async Task<ActionResult<CategoriaResponse>> ObterPorId(Guid id)
         {
             var categoria = await _categoriaService.ObterPorIdAsync(id);
             if (categoria == null)
@@ -36,19 +37,19 @@ namespace GastosResidenciais.API.Controllers
 
         // POST: api/categorias
         [HttpPost]
-        public async Task<ActionResult<CategoriaOutputDto>> Criar([FromBody] CategoriaInputDto dto)
+        public async Task<ActionResult<CategoriaResponse>> Criar([FromBody] CreateCategoriaRequest request)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var categoria = await _categoriaService.CriarAsync(dto);
+            var categoria = await _categoriaService.CriarAsync(request);
             return CreatedAtAction(nameof(ObterPorId), new { id = categoria.Id }, categoria);
         }
 
         // GET: api/categorias/totais
         // Retorna o total de receitas, despesas e saldo por categoria (funcionalidade opcional)
         [HttpGet("totais")]
-        public async Task<ActionResult<TotaisCategoriasDto>> ObterTotais()
+        public async Task<ActionResult<TotaisCategoriasResponse>> ObterTotais()
         {
             var totais = await _categoriaService.ObterTotaisPorCategoriaAsync();
             return Ok(totais);
